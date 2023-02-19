@@ -1,0 +1,157 @@
+[Adblock Plus 2.0]
+! Title: Some Rules
+! Version: 2023-01-24 20:17 
+! Last Update: 2023-01-24 20:17:54（北京时间） 
+! Expires: 12 Hours
+! Description: 移除一些烦人的元素
+!
+!------start------!
+!
+! 通配符拦截
+*/log/client/*
+*/log/ad/*
+*/log/collect/*
+*/app_log/*
+
+!通用元素拦截
+##.tips-box
+
+! 话本小说
+||sdk-conf.getui.com^$app=com.huabenapp
+||www.ihuaben.com/book/app/vipReadWaitSecond^
+
+! Don't Copy
+baijiahao.baidu.com,m*.baidu.com,tieba.baidu.com,m.bilibili.com,csdn.net#%#document.execCommand = {}
+baijiahao.baidu.com,m*.baidu.com,tieba.baidu.com,m.bilibili.com,csdn.net#%#navigator.clipboard.writeText = {}
+baijiahao.baidu.com,m*.baidu.com,tieba.baidu.com,m.bilibili.com,csdn.net#%#navigator.clipboard.write = {}
+baijiahao.baidu.com,m*.baidu.com,tieba.baidu.com,m.bilibili.com,csdn.net#%#document.write = {}
+
+!deepl
+www.deepl.com##[class^="SeoTextSection-module--"]
+
+! PushPush的广告和小程序打开
+pushplus.plus##div.container.py-3.text-center
+www.pushplus.plus##.img-fluid
+
+! 城通网盘
+ctfile.com##div.h-100.card
+
+! Petalsearch 移除广告与新闻
+petalsearch.com##.feed-cont
+www.petalsearch.com##.van-pull-refresh.refresh-cont
+www.petalsearch.com##.advertisement-effect.card-v2.sparkle-card
+
+! Csdn
+blog.csdn.net###wap_open_app_btn
+blog.csdn.net##.csdn-redpack-container
+blog.csdn.net##.over-the-screen
+blog.csdn.net##.title-box > a[href*="download.csdn"]
+
+! 腾讯视频网页端
+m.v.qq.com##.at-app-banner
+m.v.qq.com##.btn_sharpness path
+m.v.qq.com##.swiper-wrapper.source_container
+m.v.qq.com##.mod_app_banner
+m.v.qq.com##.mod_privilege
+m.v.qq.com##.mod_game_rec.mod_box
+m.v.qq.com##.mod_multi_figures_h.mod_sideslip_h.mod_box
+m.v.qq.com##.figure_app
+m.v.qq.com##.js_open_app.btn_user_hd
+m.v.qq.com##.site-top__open-app
+m.v.qq.com##.player-mask__small-tips
+
+! 爱奇艺网页端
+m.iqiyi.com##.rank-link
+m.iqiyi.com##.m-videoUser-spacing
+www.iq.com##.focus-promotion
+www.iq.com##.iqp-logoload-btn
+www.iq.com##.h5.download-container
+www.iq.com##[class*="playBannerNew__PlayBannerNewWrapper"]
+www.iq.com##.h5.qrcode-wrap
+www.iq.com##.open-app-btn
+www.iq.com##.focus-promotion
+www.iq.com##[class*="downloadApp__DownloadAppWrapper"]
+www.iq.com##.download-wrap
+
+!澎湃新闻
+m.thepaper.cn##[class*=index_footer_banner]
+m.thepaper.cn##[class^=header_header_download]
+
+!百度贴吧
+||c.tieba.baidu.com/c/f/forum/getAdInfo
+||pn.baidu.com/*ad^
+
+tieba.baidu.com##.nav-bar-bottom
+tieba.baidu.com##.open-app
+tieba.baidu.com##.more-btn-desc
+
+! Youku
+youku.com##[class^=info-bottom_]
+youku.com##.callEnd_box
+youku.com###download_btn
+！爱奇艺
+@@||cards.iqiyi.com^
+
+！快对作业
+||c.kuaiduizuoye.com^
+||adashbc.ut.taobao.com^
+
+! bilibili
+! 去除开屏广告
+||app.bilibili.com/x/v2/splash/list
+! 去除推荐中的广告
+||app.bilibili.com/x/v2/feed/index$replace=/{"card_type":"cm_v2".*?"three_point_v2".*?}\,/ /
+! 免费换皮肤
+||club.bilibili.com/api/query.skin.list.do$replace=/"is_free":false/"is_free":true/
+! 精简界面的无用选项（底部tab栏游戏，右上角游戏，还有drawer的无用东西）
+! 去右上角游戏中心
+||app.bilibili.com/x/resource/show/tab$replace=/{"id":221.*?}\,//
+! 去会员购
+||app.bilibili.com/x/resource/show/tab$replace=/{"id":297.*?}\,//
+! 去除推荐当中banner上的广告
+||app.bilibili.com/x/v2/feed/index$replace=/{"id":0.*?"is_ad":true.*?"upzone_entrance_report_id".*?}\,/ /
+! 去除视频下的应用推广
+||app.bilibili.com/x/v2/view$replace=/{"pic".*?"stat".*?"new_card".*?}\,//
+! 去视频下方推广
+||app.bilibili.com/x/v2/view$replace=/{"title":.*?"is_ad":true.*?"trackid".*?}\,//
+! 去up推荐广告
+||app.bilibili.com/x/v2/view$replace=/{"request_id".*?"ad_info".*?}}}/{ }/
+
+! Zhihu
+||*/check_health$app=com.zhihu.android
+
+!修改内容
+||api.zhihu.com/topstory/recommend$replace=/{"id":"AD.*?"type":"feed_advert".*?adjson.*?"ncontent".*?"ecpm".*?}}\,/ /
+!放过评论
+@@||zhihu-web-analytics.zhihu.com/api/v2/za/payload-verification
+!每个问题下的广告
+||api.zhihu.com/v4/questions/*/answers$replace=/"ad_info":{.*?}.*?"position".*?}\,/ /
+!关注tab
+||api.zhihu.com/moments/recommend$replace=/{"action_text".*?adjson.*?"feed_advert"}\,/ /
+!评论区广告
+||api.zhihu.com/answers/*/comments/featured-comment-ad
+! 去除直播烦人的小红点
+||api.zhihu.com/drama/living-info$replace=/true/false/
+
+
+! miui主题壁纸
+!||api.zhuti.xiaomi.com/app/v9/uipages$replace=/{"title".*?"imageUrl":null.*?"canEncourage":false}\,/ /
+
+! miui浏览器
+||api.browser.miui.com/bsr/update/banners/v2
+
+
+! CookAPK直接禁止访问京东与头条域名
+||*jd.com^$app=com.coolapk.market
+||*toutiao.com^$app=com.coolapk.market
+||*snssdk*^$app=com.coolapk.market
+
+! 酷安的banner
+||coolapk.com/v6/main/indexV8?$replace=/\{"entityType":"card"\,"entityTemplate":"iconMiniScrollCard".*?\}\,\{"entityType":"card"/{"entityType":"card"/
+||coolapk.com/v6/main/indexV8?$replace=/\{"entityType":"card"\,"entityTemplate":"iconLinkGridCard".*?\}\,\{"entityType":"card"/{"entityType":"card"/
+||coolapk.com/v6/main/indexV8?$replace=/\{"entityType":"card"\,"entityTemplate":"imageCarouselCard_1".*?\}\,\{"entityType":"card"/{"entityType": "card"/
+
+!尝试去除拼多多与日用无关广告(实测在刷新后会加载回来，暂时不知道他是怎么做到的)
+||api.pinduoduo.com/api/alexa/homepage/hub?page_id=index.html?dy_sub_page=home^$replace=/search_bar_hot_query.*search_bar_visible/search_bar_hot_query":{},"search_bar_visible/
+||api.pinduoduo.com/api/alexa/homepage/hub?page_id=index.html?dy_sub_page=home^$replace=/"title":"多多视频".*?\}\,\{//
+||api.pinduoduo.com/api/alexa/homepage/hub?page_id=index.html?dy_sub_page=home^$replace=/"icon_set":\[.*?\]/"icon_set":[{}]/

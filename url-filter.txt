@@ -1,0 +1,169 @@
+[Adblock Plus 2.0]
+! Title: HC's URL Tracking Filter
+! Version: 2023-01-28 23:08 
+! Last Update: 2023-01-28 23:08:27 
+! Expires: 1 Months
+! Homepage: https://github.com/hacamer/AdRule
+!
+
+! 百度
+||baidu.com^$removeparam=rsv_sug*
+||baidu.com^$removeparam=vit
+||baidu.com^$removeparam=t_noscript
+||baidu.com^$removeparam=wpo
+||baidu.com^$removeparam=pu
+||baidu.com^$removeparam=baiduid
+||baidu.com^$removeparam=fenlei
+||baidu.com^$removeparam=ori_sid
+||baidu.com^$removeparam=pos
+
+! 百度搜索
+||www.baidu.com^$removeparam=rsv_t
+||www.baidu.com^$removeparam=tj
+||www.baidu.com^$removeparam=rsv_pq
+||www.baidu.com^$removeparam=sugid
+||www.baidu.com^$removeparam=ts
+||www.baidu.com^$removeparam=t_kt
+||www.baidu.com^$removeparam=rsv_iqid
+||www.baidu.com^$removeparam=rqlang
+||www.baidu.com^$removeparam=ie
+||www.baidu.com^$removeparam=oq
+||www.baidu.com^$removeparam=ss
+||www.baidu.com^$removeparam=sa
+||www.baidu.com^$removeparam=from
+||www.baidu.com^$removeparam=ch
+||www.baidu.com^$removeparam=tn
+||www.baidu.com^$removeparam=f
+||www.baidu.com^$removeparam=rsv_idx
+||www.baidu.com^$removeparam=bar
+||www.baidu.com^$removeparam=rsv_spt
+||www.baidu.com^$removeparam=rsv_bp
+||www.baidu.com^$removeparam=rsv_enter
+||www.baidu.com^$removeparam=rsv_btype
+||www.baidu.com^$removeparam=rsv_dl
+||www.baidu.com^$removeparam=bd_ck
+||www.baidu.com^$removeparam=ex_bp_rt
+
+
+! 百度搜索m页面
+||m*.baidu.com^$removeparam=rsv_t
+||m*.baidu.com^$removeparam=tj
+||m*.baidu.com^$removeparam=rsv_pq
+||m*.baidu.com^$removeparam=rsv_*
+||m*.baidu.com^$removeparam=sugid
+||m*.baidu.com^$removeparam=ts
+||m*.baidu.com^$removeparam=t_kt
+||m*.baidu.com^$removeparam=rsv_iqid
+||m*.baidu.com^$removeparam=rqlang
+||m*.baidu.com^$removeparam=ie
+||m*.baidu.com^$removeparam=oq
+||m*.baidu.com^$removeparam=ss
+||m*.baidu.com^$removeparam=sa
+||m*.baidu.com^$removeparam=from
+||m*.baidu.com^$removeparam=ch
+||m*.baidu.com^$removeparam=tn
+||m*.baidu.com^$removeparam=f
+||m*.baidu.com^$removeparam=rsv_idx
+||m*.baidu.com^$removeparam=bar
+||m*.baidu.com^$removeparam=rsv_spt
+||m*.baidu.com^$removeparam=rsv_bp
+||m*.baidu.com^$removeparam=rsv_enter
+||m*.baidu.com^$removeparam=rsv_btype
+||m*.baidu.com^$removeparam=rsv_dl
+||m*.baidu.com^$removeparam=bd_ck
+||m*.baidu.com^$removeparam=ex_bp_rt
+
+! 百度百科
+||baike.baidu.com^$removeparam=ivk_sa
+||baike.baidu.com^$removeparam=fr
+
+! 百度贴吧
+||tieba.baidu.com^$removeparam=refer
+||tieba.baidu.com^$removeparam=source
+||tieba.baidu.com^$removeparam=prev
+
+! 谷歌搜索
+||www.google.com/search^$removeparam=~/^(q|lr|tbm|async|asearch|start|tbs)=/
+
+! Bing搜索
+||bing.com/search^$removeparam=~/^(q|lr|first)=/
+
+! 京东
+||jd.com^$removeparam=pps
+||jd.com^$removeparam=country
+||jd.com^$removeparam=forbidtov3
+||jd.com^$removeparam=_jxgy
+||jd.com^$removeparam=ispg
+||jd.com^$removeparam=ptag
+||jd.com^$removeparam=jxsid
+||jd.com^$removeparam=_fd
+||jd.com^$removeparam=scene
+
+! 淘宝
+||taobao.com^$removeparam=spm
+||h5.m.taobao.com^$removeparam=bxsign
+||h5.m.taobao.com^$removeparam=tbSocialPopKey
+||h5.m.taobao.com^$removeparam=un_site
+||h5.m.taobao.com^$removeparam=tk
+||h5.m.taobao.com^$removeparam=shareUniqueId
+||m.tb.cn^$removeparam=tk
+
+! 抖音
+||douyin.com^$removeparam=count
+||douyin.com^$removeparam=enter_from
+||douyin.com^$removeparam=enter_method
+||douyin.com^$removeparam=publish_time
+||douyin.com^$removeparam=sort_type
+||douyin.com^$removeparam=source
+||douyin.com$removeparam=previous_page
+||douyin.com$removeparam=pre_vid
+||douyin.com$removeparam=secUid
+||douyin.com$removeparam=cursor
+||douyin.com$removeparam=modeFrom
+||douyin.com$removeparam=tab_name
+||douyin.com$removeparam=aid
+||douyin.com$removeparam=earch_cursor
+||douyin.com$removeparam=xtra_params
+||douyin.com$removeparam=extra_params
+! 抖音视频段
+||douyin.com/video^$removeparam=search_keyword
+||douyin.com/video^$removeparam=search_cursor
+! 用户段
+||douyin.com/user^$removeparam=from_gid
+||douyin.com/user^$removeparam=is_full_screen
+
+! 爱奇艺
+||iqiyi.com$removeparam=vfrmrst
+||iqiyi.com$removeparam=vfrmblk
+||iqiyi.com$removeparam=vfrm
+
+! Youtube
+||youtube.com$removeparam=t
+||youtube.com$removeparam=event
+||youtube.com$removeparam=redir_token
+
+! UC
+||www.uc123.com$removeparam=pid
+||www.uc123.com$removeparam=f
+
+! Tianmao
+||www.tmall.com$removeparam=union_lens
+||www.tmall.com$removeparam=bxsign
+
+! TX VIDEO
+||m.v.qq.com^$removeparam=url_from
+||m.v.qq.com^$removeparam=second_share
+||m.v.qq.com^$removeparam=share_from
+||m.v.qq.com^$removeparam=pgid
+||v.qq.com^$removeparam=mod_id
+||v.qq.com^$removeparam=url_from
+||v.qq.com^$removeparam=second_share
+||v.qq.com^$removeparam=share_from
+||v.qq.com^$removeparam=pgid
+||v.qq.com^$removeparam=mod_id
+
+! 微软Edge
+||microsoftedgewelcome.microsoft.com^$removeparam=channel
+||microsoftedgewelcome.microsoft.com^$removeparam=version
+||microsoftedgewelcome.microsoft.com^$removeparam=form
+||microsoftedgewelcome.microsoft.com^$removeparam=slide
